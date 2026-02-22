@@ -77,3 +77,20 @@ function lerp(a, b, t)
     local result = a+t*(b-a)
     return result
 end
+
+-- filter accepts a list (table) and a function
+-- it calls the function on every elemnt of the list
+-- if the response is truthy, the element is kept in a new list, otherwise it is discared
+-- the return value is the new list
+function filter(list, fn)
+    local result = {}
+    for i=1, #list do
+        local element = list[i]
+        local test = fn(element)
+        if(test) then
+            add(result, element)
+        end
+        
+    end
+    return result
+end
