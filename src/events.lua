@@ -1,5 +1,3 @@
--- Events
-
 player_moved_event = "pme" -- example event
 
 local listeners = {
